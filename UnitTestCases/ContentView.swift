@@ -9,13 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            
+            Button{
+                callVehicle()
+            } label: {
+                Text("Start Vehicle")
+            }
+            .foregroundColor(.blue)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+            
         }
         .padding()
+    }
+    
+    func callVehicle()
+    {
+        let Jaguar = Vehicle(type: .Car)
+        Jaguar.startEngine(minutes: 60)
+        print(Jaguar.returnMiles())
     }
 }
 
